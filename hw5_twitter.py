@@ -39,10 +39,7 @@ try:
 except:
     CACHE_DICTION = {}
 data=open(CACHE_FNAME, 'w')
-# files=json.dumps(resource_url)
-# new=files.write(tweet.json, indent=4)
-# new.close()
-# print(new)
+
 
 #Finish parts 1 and 2 and then come back to this
 
@@ -72,6 +69,7 @@ def see_tweets(username, num_tweets):
         tweets+=item['text']
     tokens=nltk.word_tokenize(tweets)
     freqDist = nltk.FreqDist(token for token in tokens if token.isalpha() and 'https' not in token and 'http' not in token and 'RT' not in token)
+#Code for Part 2:Analyze Tweets
     for word, frequency in freqDist.most_common(5):
         print(word + " " + str(frequency))
     return CACHE_DICTION[resource_url]
@@ -82,7 +80,7 @@ see_tweets(username, num_tweets)
 #Loop through and print the words and frequencies for the most common 5 words
 
 
-#Code for Part 2:Analyze Tweets
+
 
 
 
